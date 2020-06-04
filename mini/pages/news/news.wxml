@@ -1,0 +1,5 @@
+<!--pages/news/news.wxml-->
+<text>我是新闻</text>
+<navigator url="/pages/home/home" hover-class="navigator-hover" open-type="switchTab">
+    点击我跳转到首页去
+</navigator>

@@ -1,0 +1,14 @@
+<view class="tabs">
+    <view class="tabs_header">
+        <view wx:for="{{tabs}}" wx:key='id' 
+        class="{{item.isActive ? 'active':''}}" 
+        bindtap='handleItemTap'
+        data-op='{{index}}'>
+            {{item.name}}
+        </view>
+        <!-- data-op='{{index}}'是自定义的，index是wx:for循环里面的index -->
+    </view>
+    <view class="tabs_content">
+        <slot></slot>
+     </view>
+</view>

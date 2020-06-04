@@ -1,0 +1,63 @@
+<!--pages/search/search.wxml-->
+<text>我是搜索</text>
+<view>欢迎来到应用的生命周期学习
+    <image class="" src="/assets/lives/QQ截图20200511160544.png" mode="widthFix" lazy-load="false" binderror=""
+        bindload="">
+    </image>
+    <view>
+        <view>
+            应用的生命周期会在app.js里面
+        </view>
+        <view>
+            // 1.-> 应用在第一次启动的时间久会触发的事件
+            // 一般会在app.js里面用 用户在启动应用会登录
+            onLaunch: function () {
+            console.log('e');
+            }
+        </view>
+        <view>
+            // 2. onshow 对应用被用户看到时会触发
+            onShow() {
+            //对应用的数据或者页面效果 重置
+            console.log("onShow");
+
+            }
+        </view>
+        <view>
+            // 3. onHide 对应用被用户隐藏时会触发
+            onHide() {
+            // 暂停或者清除定时器
+            console.log("onHide");
+            }
+        </view>
+        <view>
+            // 4. onHide 对应用被用户隐藏时会触发
+            onHide() {
+            // 暂停或者清除定时器
+            console.log("onHide");
+
+            }
+        </view>
+        <view>
+            // 3. onHide 对应用被用户隐藏时会触发
+            onHide() {
+            // 暂停或者清除定时器
+            console.log("onHide");
+
+            }
+        </view>
+        // 4.应用的代码发生了保存的时候 就会触发
+        onerror(Err) {
+        // 在应用发生代码保存的时候，收集用户的错位信息，
+        // 通过异步请求，将错误的信息发送到后台去
+        console.log('Err');
+        }
+        <view>
+            // 5.页面找不大就会触发
+            // 应用第一次启动的时候，如果找不到第一个入口页面 才会触发
+            onPageNotFound() {
+            console.log("onPageNotFound");
+            }
+        </view>
+    </view>
+</view>

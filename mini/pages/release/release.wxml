@@ -1,0 +1,8 @@
+<!--pages/release/release.wxml-->
+<text>我是发布</text>
+<view>
+    页面的生命周期学习
+    <image class="" src="/assets/lives/页面生命周期.png" mode="widthFix">
+    </image>
+</view>
+  

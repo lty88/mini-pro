@@ -1,0 +1,39 @@
+/* pages/mine/mine.wxss */
+@color: pink;
+
+.vs {
+    /* width: 200rpx; */
+    width           : calc(750rpx*100/375);
+    height          : 200rpx;
+    font-size       : 40rpx;
+    background-color: #cccc;
+    color           : @color;
+}
+
+.imgs {
+    display        : flex;
+    justify-content: center;
+
+    .img {
+        box-sizing: border-box;
+        border    : 1px solid pink;
+        width     : 200px;
+        height    : 500px;
+
+    }
+}
+
+.swiper-box {
+    display        : flex;
+    justify-content: left;
+
+    swiper {
+        margin-top: 20px;
+        width     :100%;
+        // height    : calc(100vw*280/520);
+        border    : 1px solid rgb(2, 110, 250);
+    }
+}
+.navigator{
+    margin-top: 50px;
+}

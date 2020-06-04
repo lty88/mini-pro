@@ -1,0 +1,172 @@
+<!-- pages/mine/mine.wxml -->
+<!-- text详单与html中span 不会换行 -->
+<text>{{text}}</text>
+<!-- view相当于HTML中的div  块级 -->
+<view>2</view>
+<!-- checkbox -->
+<view>
+  <checkbox checked="{{ischecked}}">男</checkbox>
+  <checkbox checked="ischecked='true'">女</checkbox>
+</view>
+<view>{{num%2==0 ? "偶数" : "奇数"}}</view>
+<view>
+  <view wx:for="{{list_hero}}" wx:for-item='item' wx:for-index='index' wx:key="id">
+    id：{{item.id}}--值：{{item.name}}id
+  </view>
+</view>
+<view>{{Person.job}}</view>
+<view>条件渲染</view>
+<view>
+  <view wx:if="{{false}}">显示</view>
+  <view wx:if="{{false}}">隐藏</view>
+  <view wx:elif="{{false}}">1</view>
+  <view wx:else>2</view>
+</view>
+<view class="">========================</view>
+<input type="text" bindinput="handleIpt"></input>
+<view>
+  <button bindtap='handletap' data-op='{{1}}'>+</button>
+  <button bindtap='handletap' data-op='{{-1}}'>-</button>
+</view>
+<view>{{num}}</view>
+
+<view class="vs" hover-class>
+  rps
+</view>
+<text class="" selectable="true" space="true" decode="true">
+  Webpack
+  是前端资源模块化管理和打包工具
+  Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。
+</text>
+<view class="imgs">
+  <image class="img" src="https://s1.ax1x.com/2020/05/09/YM5t9P.jpg" mode='widthFix' lazy-load="true" binderror=""
+    bindload="">
+
+  </image>
+</view>
+<!-- 
+  swiper默认样式：
+  -> width 100%
+  -> height 150px image存在默认宽度和高度 320*240
+  -> swiper 高度 有无实现由内容撑开
+  req:
+  先找出 原图的高和宽 等比列给swiper 定宽高 
+  原图是 520*280px
+  swiper 宽/ swiper高=原图的宽度/原图的高度
+   100% / swiper高 =520/280
+   calc(100%*280/520)
+ -->
+<view class="swiper-box">
+  <swiper indicator-dots='true' indicator-active-color='red' autoplay='true' current='2'>
+    <swiper-item class="" item-id="">
+      <image src="http://img.alicdn.com/tfs/TB1zIwdFkP2gK0jSZPxXXacQpXa-520-280.jpg_q90_.webp" mode="widthFix"
+        lazy-load="true" />
+    </swiper-item>
+    <swiper-item class="" item-id="">
+      <image src="https://aecpm.alicdn.com/simba/img/TB183NQapLM8KJjSZFBSutJHVXa.jpg" mode="widthFix"
+        lazy-load="true" />
+    </swiper-item>
+    <swiper-item class="" item-id="">
+      <image src="//img.alicdn.com/tfs/TB1zIwdFkP2gK0jSZPxXXacQpXa-520-280.jpg_q90_.webp" mode="widthFix"
+        lazy-load="true" />
+    </swiper-item>
+    <swiper-item class="" item-id="">
+      <image src="https://aecpm.alicdn.com/simba/img/TB1XotJXQfb_uJkSnhJSuvdDVXa.jpg" mode="widthFix"
+        lazy-load="true" />
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="navigator"> ==========navigator==========</view>
+<navigator url="/pages/home/home" hover-class='navigator-hover' open-type="switchTab">
+  点击我跳转到tabbar主页去
+</navigator>
+
+
+<view class="rich-text"> ==========rich-text==========</view>
+<rich-text class="" nodes="{{html}}">
+
+</rich-text>
+
+<view class="button"> ==========button==========</view>
+<button size="mini" plain='true' loading='true'>
+  按钮
+</button>
+
+<view class="open-type"> ==========open-type的开放模式==========</view>
+<view>
+  <button open-type='contact'>
+    contact 直接打开客户功能
+  </button>
+</view>
+<view>
+  <button open-type='launchApp'>
+    launchApp 在小程序中直接打开app
+  </button>
+</view>
+<view>
+  <button open-type='getUserInfo' bindgetuserinfo='bindgetUserInfo'>
+    getUserInfo 获取当前用户个人信息
+  </button>
+</view>
+<view>
+  <button open-type='getPhoneNumber' bindgetphonenumber='bindgetPhoneNumber'>
+    getPhoneNumber 获取当前用户手机号码信息
+  </button>
+</view>
+<view>
+  <button open-type='share'>
+    share 转发当前小程序
+  </button>
+</view>
+<view>
+  <button open-type='contact'>
+    contact 直接打开客户功能
+  </button>
+</view>
+<button open-type='openSetting'>
+  openSetting 打开小程序内置的授权页面
+</button>
+<button open-type='feedback'>
+  feedback 打开小程序内置的意见反馈页面
+</button>
+
+<view> ==========ICON字体图标==========</view>
+<icon class="" type="success" size="30" color="red" />
+
+<icon class="" type="success_no_circle" size="30" color="">
+</icon>
+<icon class="" type="download" size="25" color="">
+</icon>
+<view> ==========radio单选框标签 ==========
+  <text class="" selectable="false" space="false" decode="false">
+    -> radio标签必须和父元素 radio-group来使用
+    -> value选中的单选框的值
+    -> 需要给rado-group绑定change事件
+    -> 需要在页面中线上 选择的值
+  </text>
+</view>
+<radio-group bindchange="handleChange">
+  <radio value="male">男</radio>
+  <radio value="female">女 </radio>
+</radio-group>
+<view>
+  您选择的性别是：{{gender}}
+</view>
+<view> ==========radio单选框标签 ==========</view>
+<view>
+  <checkbox-group bindchange="handledoods">
+    <checkbox value="{{item.value}}" wx:for="{{list_goods}}" wx:key='id'>
+      {{item.name}}
+      {{item.value}}
+    </checkbox>
+  </checkbox-group>
+  <view>
+    您选择的商品有：{{checked_list}}
+  </view>
+</view>
+<view> ==========自定义组件 ==========</view>
+<navigator url="/pages/home/home" hover-class="navigator-hover" open-type="switchTab">
+  进入自定义组件学习
+</navigator>
+

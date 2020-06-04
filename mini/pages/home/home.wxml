@@ -1,0 +1,16 @@
+<!--pages/home/home.wxml-->
+<!-- <view>{{messages}}</view> -->
+<Tabs tabs='{{tabs}}' binditemChange='handleItemChange'>
+    <block wx:if="{{tabs[0].isActive}}">首页
+        <navigator url="/pages/search/search" open-type='switchTab'>
+            点我进入应用的生命周期学习
+        </navigator>
+    </block>
+    <block wx:elif="{{tabs[1].isActive}}">原创
+        <navigator url="/pages/release/release" open-type='switchTab'>
+            点我进入页面的生命周期学习
+        </navigator>
+    </block>
+    <block wx:elif="{{tabs[2].isActive}}">分类</block>
+    <block wx:else>关于</block>
+</Tabs>
